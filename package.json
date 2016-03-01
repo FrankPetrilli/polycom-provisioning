@@ -1,0 +1,18 @@
+{
+  "name": "polycom-provisioning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Frank Petrilli",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "elementtree": "^0.1.6",
+    "express": "^4.13.3",
+    "fs": "0.0.2",
+    "mysql": "^2.9.0"
+  }
+}

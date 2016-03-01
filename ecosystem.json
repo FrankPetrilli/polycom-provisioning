@@ -1,0 +1,29 @@
+{
+  /**
+   * Application configuration section
+   * http://pm2.keymetrics.io/docs/usage/application-declaration/
+   */
+  apps : [
+    {
+      name      : "polycom",
+      script    : "run.js",
+      env: {
+        DB_HOST: "localhost",
+	DB_USER: "phones",
+	DB_PASSWORD: "password",
+	DB_DATABASE: "phones",
+	PBX_HOST: "pbx.your.organization.com"
+      },
+      watch: true
+    }
+  ],
+  deploy : {
+    production : {
+      host : "localhost",
+      ref  : "origin/master",
+      repo : "git@github.com:FrankPetrilli/PolycomConfigGenerator.git",
+      path : "~/PolycomConfig/",
+      "post-deploy" : "npm install; pm2 startOrRestart ecosystem.json"
+    }
+  }
+}
